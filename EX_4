@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Insira um número: ";
+    cin >> num;
+    if (num % 2 == 0) {
+        cout << "O número " << num << " é par." << endl;
+    } else {
+        cout << "O número " << num << " é ímpar." << endl;
+    }
+    return 0;
+}
