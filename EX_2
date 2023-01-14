@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    string name;
+    int age;
+
+    cout << "Qual é o seu nome? ";
+    cin >> name;
+    cout << "Qual é a sua idade? ";
+    cin >> age;
+    cout << "Meu nome é " << name << " e eu tenho " << age << " anos." << endl;
+
+    return 0;
+}
