@@ -1,0 +1,43 @@
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+map<string, int> stock;
+
+void addItem(string item, int qty) {
+    if (stock.find(item) == stock.end()) {
+        stock[item] = qty;
+    } else {
+        stock[item] += qty;
+    }
+    cout << "Item adicionado ao estoque: " << item << " x " << qty << endl;
+}
+
+void removeItem(string item, int qty) {
+    if (stock.find(item) == stock.end()) {
+        cout << "Item não encontrado no estoque." << endl;
+    } else if (stock[item] < qty) {
+        cout << "Quantidade insuficiente no estoque." << endl;
+    } else {
+        stock[item] -= qty;
+        cout << "Item removido do estoque: " << item << " x " << qty << endl;
+    }
+}
+
+void displayStock() {
+    cout << "Estoque atual:" << endl;
+    for (auto item : stock) {
+        cout << item.first << " x " << item.second << endl;
+    }
+}
+
+int main() {
+    addItem("Arroz", 10);
+    addItem("Feijão", 5);
+    addItem("Macarrão", 8);
+    displayStock();
+    removeItem("Feijão", 2);
+    displayStock();
+    return 0;
+}
