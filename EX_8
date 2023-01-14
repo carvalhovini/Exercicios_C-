@@ -1,0 +1,51 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+map<int, double> accounts;
+
+void createAccount(int accountNumber) {
+    if (accounts.find(accountNumber) == accounts.end()) {
+        accounts[accountNumber] = 0.0;
+        cout << "Conta criada com sucesso: " << accountNumber << endl;
+    } else {
+        cout << "Essa conta já existe." << endl;
+    }
+}
+
+void deposit(int accountNumber, double amount) {
+    if (accounts.find(accountNumber) == accounts.end()) {
+        cout << "Conta não encontrada." << endl;
+    } else {
+        accounts[accountNumber] += amount;
+        cout << "Depósito efetuado com sucesso. Novo saldo: " << accounts[accountNumber] << endl;
+    }
+}
+
+void withdraw(int accountNumber, double amount) {
+    if (accounts.find(accountNumber) == accounts.end()) {
+        cout << "Conta não encontrada." << endl;
+    } else if (accounts[accountNumber] < amount) {
+        cout << "Saldo insuficiente." << endl;
+    } else {
+        accounts[accountNumber] -= amount;
+        cout << "Saque efetuado com sucesso. Novo saldo: " << accounts[accountNumber] << endl;
+    }
+}
+
+void displayBalance(int accountNumber) {
+    if (accounts.find(accountNumber) == accounts.end()) {
+        cout << "Conta não encontrada." << endl;
+    } else {
+        cout << "Saldo da conta " << accountNumber << ": " << accounts[accountNumber] << endl;
+    }
+}
+
+int main() {
+    createAccount(123456);
+    deposit(123456, 500);
+    displayBalance(123456);
+    withdraw(123456, 250);
+    displayBalance(123456);
+    return 0;
+}
