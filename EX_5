@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0)); 
+    int randomNum = rand() % 100 + 1;
+    int guess;
+    bool correct = false;
+    while (!correct) {
+        cout << "Adivinhe o número entre 1 e 100: ";
+        cin >> guess;
+        if (guess == randomNum) {
+            cout << "Parabéns, você acertou o número!" << endl;
+            correct = true;
+        } else if (guess < randomNum) {
+            cout << "Seu palpite é menor do que o número gerado. Tente novamente." << endl;
+        } else {
+            cout << "Seu palpite é maior do que o número gerado. Tente novamente." << endl;
+        }
+    }
+    return 0;
+}
