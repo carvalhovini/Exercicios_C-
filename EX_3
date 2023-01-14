@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2, num3, average;
+    cout << "Insira três números separados por espaço: ";
+    cin >> num1 >> num2 >> num3;
+    average = (num1 + num2 + num3) / 3;
+    cout << "A média aritmética é: " << average << endl;
+    return 0;
+}
