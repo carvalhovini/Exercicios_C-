@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
+
+int main() {
+    int num;
+    cout &#8203;`oaicite:{"index":0,"invalid_reason":"Malformed citation << \"Enter a number: \";\n    cin >>"}`&#8203; num;
+    cout << "Factorial of " << num << " is " << factorial(num);
+    return 0;
+}
