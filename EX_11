@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+void fibonacci(int terms) {
+    int a = 0, b = 1, c;
+    if (terms == 1) {
+        cout << a;
+        return;
+    }
+    if (terms == 2) {
+        cout << a << " " << b;
+        return;
+    }
+    cout << a << " " << b << " ";
+    for (int i = 2; i < terms; i++) {
+        c = a + b;
+        cout << c << " ";
+        a = b;
+        b = c;
+    }
+}
+
+int main() {
+    int terms;
+    cout &#8203;`oaicite:{"index":2,"invalid_reason":"Malformed citation << \"Enter the number of terms: \";\n    cin >>"}`&#8203; terms;
+    cout << "Fibonacci series: ";
+    fibonacci(terms);
+    return 0;
+}
