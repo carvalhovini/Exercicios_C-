@@ -1,0 +1,37 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    // File stream object
+    ofstream outFile;
+
+    // Open a file for writing
+    outFile.open("example.txt");
+
+    // Write data to the file
+    outFile << "This is a line of text." << endl;
+    outFile << "This is another line of text." << endl;
+
+    // Close the file
+    outFile.close();
+
+    // File stream object
+    ifstream inFile;
+
+    // Open a file for reading
+    inFile.open("example.txt");
+
+    // Read data from the file
+    string line;
+    while (getline(inFile, line))
+    {
+        cout << line << endl;
+    }
+
+    // Close the file
+    inFile.close();
+
+    return 0;
+}
